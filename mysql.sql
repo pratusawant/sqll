@@ -7,8 +7,14 @@ select * from sales;
 select * from sales;
 
 #2. Get the total number of records in the sales table.
-select count
+SELECT COUNT(*) AS total_sales_records
+FROM sales;
+
 #3. Find the total revenue generated from sales.
+SELECT SUM(quantity * price) AS total_revenue
+FROM sales;
+
+
 #4. Retrieve the most expensive product.
 
 select*from sales
@@ -22,7 +28,7 @@ limit 1;
 
 6. Retrieve products sold in the month of March.
 select * from sales
-where extract( month from sale_date)=3;                                    ######
+where extract( month from sale_date)=3;                                    
 
 7. Find the average price of all products.
 select  avg(price)as average_price
@@ -42,7 +48,9 @@ limit 1;
 
 
 10. Find the product with the lowest quantity sold.
-
+select * from sales
+order by  quantity_sold asc
+limit 1;
 
 
 11. Retrieve sales details for Electronics category.
